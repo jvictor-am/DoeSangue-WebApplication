@@ -26,7 +26,7 @@
   </head>
   <body>
     <header>
-      <img class="logo" src="logo.png" alt="Imagm de DOE" />
+      <img class="logo" src="logo.png" alt="Imagem de DOE" />
       <!-- <h2>A sua doação importa</h2> -->
       <h2>A sua doação faz a diferença!</h2>
       <p>Até 3 vidas são salvas com 1 doação.</p>
@@ -37,7 +37,7 @@
 
     <section class="form hide">
       <h2>Entre para a lista de doadores</h2>
-      <form action="/">
+      <form action="/" method="POST">
         <input type="text" name="name" placeholder="Nome Completo" />
         <input type="text" name="email" placeholder="Email" />
         <input type="text" name="blood" placeholder="Tipo Sanguíneo" />
@@ -49,11 +49,15 @@
     <main>
       <h2>Últimos <span>doadores</span></h2>
       <section class="donors">
+        {% for donor in donors %}
+
         <div class="donor">
-          <div class="blood">AB+</div>
-          <p>Álvaro Carvalho</p>
+          <div class="blood">{{donor.blood}}</div>
+          <p>{{donor.name}}</p>
         </div>
-        <div class="donor">
+
+        {% endfor %}
+        <!-- <div class="donor">
           <div class="blood">A+</div>
           <p>Gustavo Cirilo</p>
         </div>
@@ -64,7 +68,7 @@
         <div class="donor">
           <div class="blood">O+</div>
           <p>Túlio Fernandes</p>
-        </div>
+        </div> -->
       </section>
     </main>
 
